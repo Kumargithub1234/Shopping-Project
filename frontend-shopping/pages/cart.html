@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <header>
+        <div class="left">
+            <img src="../Icons/Logo.png" alt="">
+            <h1>STAR SHOPPER</h1>
+        </div>
+        <div class="right">
+            <img src="../Icons/cart.png" alt="">
+            <img src="../Icons/user.png" alt="">
+            <div><button class="logoutBtn">Logout</button></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left">
+            <h1>YOUR CART:</h1>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Vegetable Box</td>
+                    <td>1</td>
+                    <td>129</td>
+                </tr>
+                <tr>
+                    <td>Recycled Bag</td>
+                    <td>1</td>
+                    <td>399</td>
+                </tr>
+                 <tr>
+                    <td>Total</td>
+                    <td>2</td>
+                    <td>528</td>
+                </tr>
+            </table>
+
+            <button onclick="switchToPurchase()">Purchase</button>
+
+        </div>
+        <div class="right">
+            <img src="../Images/shopping-cart.png" alt="">
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+
+        let logoutBtn = document.querySelector('.logoutBtn')
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = '../index.html'
+        })
+
+        function switchToPurchase() {
+            window.location.href = "./purchase.html"
+        }
+
+    </script>
+
+</body>
+</html>
+
+<!-- Style CSS -->
+<style>
+
+    header{
+        height: 10%;
+        background-color: #FFF176;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header h1{
+        font-size: 4rem;
+        font-style: italic;
+    }
+
+    header .left{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding: 1rem;
+        margin-left: 5rem;
+    }
+
+    header .right{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        margin-right: 8rem;
+    }
+
+    .logoutBtn{
+        border: none;
+        padding: 1.3rem;
+        border-radius: 1rem;
+        font-size: 25px;
+        width: 180%;
+        color: #1565C0;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    header .left img{
+        height: 90px;
+        width: 90px;
+    }
+
+    header .right img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+    }
+
+    .container .left{
+        width: 40%;
+        padding: 5rem;
+        margin-left: 3rem;
+    }
+    .container .left h1{
+        font-size: 3rem;
+        font-style: italic;
+    }
+
+    table{
+        border-collapse: collapse;
+        margin-top: 3rem;
+    }
+
+    th,td{
+        border: 5px solid gray;
+        padding: 2rem;
+        font-size: 35px;
+    }
+
+    .container .left button{
+        padding: 1.5rem;
+        border: none;
+        background-color: #00BCD4;
+        color: white;
+        font-size: 28px;
+        width: 40%;
+        margin-top: 3rem;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+    .container .right{
+        width: 50%;
+    }
+
+    .container .right img{
+        width: 1000px;
+        height: 600px;
+        margin-top: 3.5rem;
+    }
+
+</style>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <div class="slider">
+        <div class="slide active">
+            <header>
+                <div class="left">
+                    <img src="../Icons/Logo.png" alt="">
+                    <h1>STAR SHOPPER</h1>
+                </div>
+                <div class="right">
+                    <img src="../Icons/cart.png" alt="">
+                    <img src="../Icons/user.png" alt="">
+                    <div><button class="logoutBtn">Logout</button></div>
+                </div>
+             </header>
+            <div class="confidence">
+                <div class="content">
+                    <h1>SHOP WITH UTMOST</h1>
+                    <Span>CONFIDENCE</Span>
+                    <p>Shop from the latest trendy clothes to the best gadjets. With Star Shopper you save 10% every time you shop!</p>
+                    <button class="browseProductsBtn">Browse Products</button>
+                    <p>Products available from:</p>
+                    <div class="brands">
+                        <img src="../Icons/eagle.png" alt="">
+                        <img src="../Icons/rabbit (1).png" alt="">
+                        <img src="../Icons/cube.png" alt="">
+                        <img src="../Icons/increase.png" alt="">
+                        <img src="../Icons/rabbit.png" alt="">
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="../Images/1.png" alt="">
+                </div>                
+            </div>
+
+        </div>
+    
+
+
+        <div class="slide">
+            <header>
+                <div class="left">
+                    <img src="../Icons/Logo.png" alt="">
+                    <h1>STAR SHOPPER</h1>
+                </div>
+                <div class="right">
+                    <img src="../Icons/cart.png" alt="">
+                    <img src="../Icons/user.png" alt="">
+                    <div><button class="logoutBtn">Logout</button></div>
+                </div>
+             </header>
+            <div class="confidence">
+                <div class="content">
+                    <h1>SHOP WITH UTMOST</h1>
+                    <Span>STYLE</Span>
+                    <p>Shop from the latest trendy clothes to the best gadjets. With Star Shopper you save 10% every time you shop!</p>
+                    <button class="browseProductsBtn">Browse Products</button>
+                    <p>Products available from:</p>
+                    <div class="brands">
+                        <img src="../Icons/eagle.png" alt="">
+                        <img src="../Icons/rabbit (1).png" alt="">
+                        <img src="../Icons/cube.png" alt="">
+                        <img src="../Icons/increase.png" alt="">
+                        <img src="../Icons/rabbit.png" alt="">
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="../Images/2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="slide">
+            <header>
+                <div class="left">
+                    <img src="../Icons/Logo.png" alt="">
+                    <h1>STAR SHOPPER</h1>
+                </div>
+                <div class="right">
+                    <img src="../Icons/cart.png" alt="">
+                    <img src="../Icons/user.png" alt="">
+                    <div><button class="logoutBtn">Logout</button></div>
+                </div>
+             </header>
+            <div class="confidence">
+                <div class="content">
+                    <h1>SHOP WITH UTMOST</h1>
+                    <span>DISCOUNTS</span>
+                    <p>Shop from the latest trendy clothes to the best gadjets. With Star Shopper you save 10% every time you shop!</p>
+                    <button class="browseProductsBtn">Browse Products</button>
+                    <p>Products available from:</p>
+                    <div class="brands">
+                        <img src="../Icons/eagle.png" alt="">
+                        <img src="../Icons/rabbit (1).png" alt="">
+                        <img src="../Icons/cube.png" alt="">
+                        <img src="../Icons/increase.png" alt="">
+                        <img src="../Icons/rabbit.png" alt="">
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="../Images/3.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="left-arrow" onclick="prev()"><img src="../Icons/left-arrow.png" alt="">
+        </div>
+
+        <div class="right-arrow" onclick="next()"><img src="../Icons/right-arrow.png" alt="">
+        </div>
+        
+    </div>
+
+
+
+    <script>
+
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide')
+
+        function displayPage(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle( 'active' ,i === index)
+            })
+        }
+
+        function next() {
+            currentIndex = ( currentIndex + 1) % slides.length
+            displayPage(currentIndex)
+        }
+
+        function prev() {
+            currentIndex = ( currentIndex - 1 + slides.length ) % slides.length
+            displayPage(currentIndex)
+        }
+
+        let browseProductsBtn = document.querySelectorAll('.browseProductsBtn')
+        browseProductsBtn.forEach( button => {
+            button.addEventListener( 'click', () => {
+                window.location.href = './products.html'
+            })
+        })
+
+        let logoutBtn = document.querySelectorAll('.logoutBtn')
+        logoutBtn.forEach(button => {
+            button.addEventListener('click', () =>{
+                window.location.href = '../index.html'
+            })
+        })
+
+    </script> 
+
+    
+</body>
+</html>
+
+<!-- CSS -->
+ <style>
+
+    .slider{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slide{
+        display: none;
+    }
+
+    .slide.active{
+        display: block;
+    }
+
+    header{
+        height: 10%;
+        background-color: #FFF176;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-arrow, .right-arrow{
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .left-arrow{
+        left: 15px;
+    }
+
+    .right-arrow{
+        right: 15px;
+    }
+
+    .left-arrow img, .right-arrow img{
+        width: 60px;
+        height: 60px;
+    }
+
+    header h1{
+        font-size: 4rem;
+        font-style: italic;
+    }
+
+    header .left{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding: 1rem;
+        margin-left: 5rem;
+    }
+
+    header .right{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        margin-right: 8rem;
+    }
+
+    .logoutBtn{
+        border: none;
+        padding: 1.3rem;
+        border-radius: 1rem;
+        font-size: 25px;
+        width: 180%;
+        color: #1565C0;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    header .left img{
+        height: 90px;
+        width: 90px;
+    }
+
+    header .right img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .confidence{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2rem;
+        gap: 10px;
+    }
+
+    .brands img{
+        height: 100px;
+        width: 100px;
+    }
+
+    .image{
+        width: 40%;
+    }
+
+    .image img{
+        width: 950px;
+        height: 750px;
+        background-color: #FFF176;
+        border-radius: 50%;
+        margin-top: 4rem;
+    }
+
+    .content{
+        width: 40%;
+    }
+
+    .content h1{
+        font-size: 4rem;
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    span{
+        font-size: 4.5rem;
+        font-style: italic;
+        font-weight: bold;
+        color: #1565C0;
+    }
+
+    p{
+        font-size: 2.5rem;
+    }
+
+    .browseProductsBtn{
+        font-size: 2rem;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 1rem;
+        width: 40%;
+        background-color: #1565C0;
+        color: white;
+        cursor: pointer;
+    }
+
+    .brands{
+        display: flex;
+        gap: 3rem;
+    }
+  
+ </style>

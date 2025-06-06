@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left">
+      <img src="../Images/Shoppers-Login.png" alt="">
+      <button class="goToBtn">Go to Seller's Login</button>
+    </div>
+    <hr>
+    <div class="right">
+      <form class="shoppersForm" method="post">
+        <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
+        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
+        <button class="loginBtn">Shoppers Login</button>
+        <button class="createAccountBtn" onclick="createAccount()">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Script -->
+   <script>
+
+    function createAccount() {
+
+      let form = document.querySelector('.shoppersForm')
+
+      form.innerHTML = `
+        <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
+        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
+        <input type="re-password" name="re-password" placeholder="Re-Enter Password">
+        <button class="createAccountBtn1">Create Account</button>
+        <button class="loginBtn1" onclick="LoginPage()">Login</button>
+      `;
+    }
+
+    function LoginPage() {
+
+      let form = document.querySelector('.shoppersForm')
+
+      form.innerHTML = `
+        <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
+        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
+        <button class="loginBtn">Shoppers Login</button>
+        <button class="createAccountBtn" onclick="createAccount">Create Account</button>
+      `;
+    }
+
+    const goToBtn = document.querySelector('.goToBtn')
+    goToBtn.addEventListener('click', () => {
+      window.location.href = "../pages/sellers-login.html"
+    })
+
+
+   </script>
+  
+</body>
+</html>
+
+<!-- CSS -->
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+  }
+
+  body{
+    height: 100%;
+    width: 100%;
+  }
+
+  .container{
+    height: 100vh;
+    display: flex;
+    background-color: #E0F7FA;
+  }
+
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  .left .goToBtn{
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    background-color: #1565C0;
+    margin-top: 5rem;
+    width: 30%;
+    margin-left: 5rem;
+    cursor: pointer;
+  }
+
+  img{
+    height: 500px;
+    width: 500px;
+    margin-top: 5rem;
+  }
+
+  .right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .shoppersForm{
+    width: 58%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1565C0;
+    color: white;
+    border-radius: 1.5rem;
+    gap: 2.8rem;
+    margin-top: 6rem;
+    padding: 1.5rem;
+  }
+
+  p{
+    font-size: 25px;
+    margin-top: 2rem;
+  }
+
+  input{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    padding: 14px;
+    border-radius: 10px;
+    width: 50%;
+  }
+
+  .loginBtn{
+    padding: 14px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #1565C0;
+    width: 40%;
+  }
+
+  .createAccountBtn{
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 20px;
+    background: none;
+    color: white;
+    text-decoration: underline;
+  }
+
+  .createAccountBtn1{
+    padding: 14px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #1565C0;
+    width: 40%;
+  }
+
+  .loginBtn1{
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 20px;
+    background: none;
+    color: white;
+    text-decoration: underline;
+  }
+
+</style> 
+

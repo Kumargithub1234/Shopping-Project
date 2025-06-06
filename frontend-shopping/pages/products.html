@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+            <div class="top">
+                <button>Search for items</button>
+            </div>
+            <hr>
+            <div class="bottom">
+                <p>Price Less than: _ _ _ _ _</p>
+                <p>Price More than: _ _ _ _ _</p>
+                <h1>Sort By:</h1>
+                <select>
+                    <option>Select Item</option>
+                    <option>Price</option>
+                    <option>Discount</option>
+                    <option>A to Z</option>
+                    <option>Z to A</option>
+                </select>
+                <div>
+                    <button onclick="switcToCart()">Go to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="right">
+            <h1>SELECT A PRODUCT AND ADD TO CART</h1>
+            <div class="products">
+                <div class="product">
+                    <img src="../Images/Vegetable-Box.png">
+                    <h1>Vegetable Box</h1>
+                    <p>129 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                
+                <div class="product">
+                    <img src="../Images/Television.png" alt="">
+                    <h1>Television</h1>
+                    <p>₹12,999 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/Office-Printer.png" alt="">
+                    <h1>Office Printer</h1>
+                    <p>₹2,999 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/microphone.png" alt="">
+                    <h1>Microphone</h1>
+                    <p>₹2,198 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/trophy.png" alt="">
+                    <h1>Trophy</h1>
+                    <p>₹929 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/light-bulb.png" alt="">
+                    <h1>Light Bulb</h1>
+                    <p>₹129 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/Recycled-Bag.png" alt="">
+                    <h1>Recycled Bag</h1>
+                    <p>₹399 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/gift.png" alt="">
+                    <h1>Mystery Gift Box</h1>
+                    <p>₹1,999 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/Jaystick.png" alt="">
+                    <h1>Joystick</h1>
+                    <p>₹2,999 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="../Images/Rubber-duck.png" alt="">
+                    <h1>Rubber Duck</h1>
+                    <p>₹129 <span>(10% OFF)</span></p>
+                    <button>Add to Cart</button>
+                </div> 
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script -->
+     <script>
+
+        function switcToCart() {
+            window.location.href = "./cart.html"
+        }
+
+     </script>
+    
+</body>
+</html>
+
+<style>
+
+    .container{
+        width: 90vw;
+        height: 98vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .left{
+        width: 30%;
+        padding: 2rem;
+    }
+
+    .left .top{
+        padding: 1rem;
+    }
+
+    .left .top button{
+        padding: 1.5rem;
+        border: none;
+        background-color: #E3F2FD;
+        font-size: 1.5rem;
+        border-radius: 2rem;
+        width: 70%;
+        margin-left: 10rem;
+    }
+
+    .left .bottom{
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: 9rem;
+    }
+
+    .left .bottom p{
+        font-size: 30px;
+    }
+
+    .left .bottom select{
+        padding: 13px;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        background-color: #E3F2FD;
+    }
+
+    .left .bottom button{
+        padding: 1.5rem;
+        border: none;
+        background-color: #1565C0;
+        color: white;
+        font-size: 25px;
+        border-radius: 1rem;
+        margin-top: 20rem;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .right{
+        width: 70%;
+        padding: 2rem;
+    }
+
+
+    .products{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+    }
+
+    .product{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+    }
+
+    .product h1{
+        margin: 0;
+    }
+
+    .product p{
+        color: #1565C0;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 8px;
+    }
+
+    .product p span{
+        color: #4CAF50;
+    }
+
+    .product button{
+        padding: 15px;
+        border: none;
+        background-color: #1565C0;
+        color: white;
+        border-radius: 2rem;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    img{
+        height: 230px;
+        width: 230px;
+        margin-top: 1rem;
+    }
+
+
+</style>

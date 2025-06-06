@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+     <header>
+        <div class="left">
+            <img src="../Icons/Logo.png" alt="">
+            <h1>STAR SHOPPER</h1>
+        </div>
+        <div class="right">
+            <img src="../Icons/cart.png" alt="">
+            <img src="../Icons/user.png" alt="">
+            <div><button class="logoutBtn">Logout</button></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>YOUR PURCHASES</h1>
+        <div class="top">
+            <div class="product">
+                <img src="../Images/Vegetable-Box.png" alt="">
+                <p>129</p>
+            </div>
+            <div class="product">
+                <img src="../Images/Recycled-Bag.png" alt="">
+                <p>399</p>
+            </div>
+            <div class="product">
+                <span>Total: 528/-</span>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="product">
+                <img src="../Images/Vegetable-Box.png" alt="">
+                <p>129</p>
+            </div>
+            <div class="product">
+                <img src="../Images/Recycled-Bag.png" alt="">
+                <p>399</p>
+            </div>
+            <div class="product">
+                <img src="../Images/Jaystick.png" alt="">
+                <p>399</p>
+            </div>
+            <div class="product">
+                <img src="../Images/gift.png" alt="">
+                <p>399</p>
+            </div>
+            <div class="product">
+                <img src="../Images/Office-Printer.png" alt="">
+                <p>399</p>
+            </div>
+            <div class="product">
+                <span>Total: 528/-</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPT -->
+     <script>
+
+        let logoutBtn = document.querySelector('.logoutBtn')
+        logoutBtn.addEventListener('click', () => {
+            window.location.href = '../index.html'
+        })
+        
+     </script>
+    
+</body>
+</html>
+
+<!-- Stle CSS -->
+ <style>
+ 
+    header{
+        height: 10%;
+        background-color: #FFF176;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header h1{
+        font-size: 4rem;
+        font-style: italic;
+    }
+
+    header .left{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding: 1rem;
+        margin-left: 5rem;
+    }
+
+    header .right{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 2rem;
+        padding: 1rem;
+        margin-right: 8rem;
+    }
+
+    .logoutBtn{
+        border: none;
+        padding: 1.3rem;
+        border-radius: 1rem;
+        font-size: 25px;
+        width: 180%;
+        color: #1565C0;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    header .left img{
+        height: 90px;
+        width: 90px;
+    }
+
+    header .right img{
+        height: 80px;
+        width: 80px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        width: 85%;
+        margin-left: 9rem;
+    }
+
+    .container h1{
+        font-size: 50px;
+        font-style: italic;
+    }
+
+    .container .top{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        background-color: #E0F7FA;
+        border-radius: 1.5rem;
+    }
+
+    .container .top span{
+        font-size: 30px;
+        font-weight: bold;
+        position: relative;
+        left: 335%;
+        top: 80%;
+    }
+
+    .container .product{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .container .product p{
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .container .product img{
+        width: 200px;
+        height: 180px;
+    }
+
+    .container .bottom{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        background-color: #E0F7FA;
+        border-radius: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .container .bottom span{
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 13rem;
+    }
+
+
+ </style>
