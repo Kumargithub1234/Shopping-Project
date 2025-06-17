@@ -16,55 +16,124 @@
     <div class="right">
       <form class="shoppersForm" method="post">
         <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
-        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
-        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
-        <button class="loginBtn">Shoppers Login</button>
-        <button class="createAccountBtn" onclick="createAccount()">Create Account</button>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email" id="loginEmail">
+        <input type="password" name="password" placeholder="Password" autocomplete="current-password" id="loginPassword">
+        <button type="submit" class="loginBtn">Shoppers Login</button>
+        <button type="button" class="createAccountBtn" onclick="createAccount()">Create Account</button>
       </form>
     </div>
   </div>
 
 
-  <!-- Script -->
-   <script>
+  <!-- SCRIPT -->
+  <script>
 
     function createAccount() {
-
-      let form = document.querySelector('.shoppersForm')
-
+      let form = document.querySelector('.shoppersForm');
       form.innerHTML = `
-        <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
-        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
-        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
-        <input type="re-password" name="re-password" placeholder="Re-Enter Password">
-        <button class="createAccountBtn1">Create Account</button>
-        <button class="loginBtn1" onclick="LoginPage()">Login</button>
+        <p>Create your account to start shopping!</p>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email" id="createEmail">
+        <input type="password" name="password" placeholder="Password" autocomplete="new-password" id="createPassword">
+        <input type="password" name="re-password" placeholder="Re-Enter Password" id="reEnterPassword">
+        <button type="submit" class="createAccountBtn1">Create Account</button>
+        <button type="button" class="loginBtn1" onclick="LoginPage()">Login</button>
       `;
+
+      document.querySelector('.createAccountBtn1').addEventListener('click', handleCreateAccount);
     }
 
     function LoginPage() {
-
-      let form = document.querySelector('.shoppersForm')
-
+      let form = document.querySelector('.shoppersForm');
       form.innerHTML = `
         <p>Login and start shopping from your favourite brands. Refer a friend and save 50% OFF</p>
-        <input type="email" name="email" placeholder="Login Email" autocomplete="email">
-        <input type="password" name="password" placeholder="Password" autocomplete="current-password">
-        <button class="loginBtn">Shoppers Login</button>
-        <button class="createAccountBtn" onclick="createAccount">Create Account</button>
+        <input type="email" name="email" placeholder="Login Email" autocomplete="email" id="loginEmail">
+        <input type="password" name="password" placeholder="Password" autocomplete="current-password" id="loginPassword">
+        <button type="submit" class="loginBtn">Shoppers Login</button>
+        <button type="button" class="createAccountBtn" onclick="createAccount()">Create Account</button>
       `;
+      
+      document.querySelector('.loginBtn').addEventListener('click', handleLogin);
     }
 
-    const goToBtn = document.querySelector('.goToBtn')
+    const goToBtn = document.querySelector('.goToBtn');
     goToBtn.addEventListener('click', () => {
-      window.location.href = "../pages/sellers-login.html"
-    })
+      window.location.href = "../pages/sellers-login.html";
+    });
+
+    const shoppersForm = document.querySelector('.shoppersForm');
+
+    async function handleLogin(event) {
+      event.preventDefault(); 
+
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/users/signin', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password }),
+          credentials: 'include' 
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          window.location.href = './confidence.html'; 
+        } else {
+          alert('Login failed: ' + data.message);
+        }
+      } catch (error) {
+        alert('An error occurred during login.');
+      }
+    }
 
 
-   </script>
-  
+    async function handleCreateAccount(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('createEmail').value;
+      const password = document.getElementById('createPassword').value;
+      const rePassword = document.getElementById('reEnterPassword').value;
+
+      if (password !== rePassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:5000/users/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert('Account created successfully! You can now log in');
+          LoginPage(); 
+        } else {
+          alert('Account creation failed: ' + data.message);
+        }
+      } catch (error) {
+        alert('An error occurred during account creation');
+      }
+    }
+
+    document.querySelector('.loginBtn').addEventListener('click', handleLogin);
+   
+  </script>
+
 </body>
 </html>
+
+
+
 
 <!-- CSS -->
 <style>

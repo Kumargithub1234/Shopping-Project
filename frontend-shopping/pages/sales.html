@@ -22,41 +22,53 @@
     <div class="container">
         <div class="left">
             <h1>SALES PERFORMANCE</h1>
-            <div class="barChart">
-                <div class="bar">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                </div>  
-                <div class="bar">
-                    <div class="bar3"></div>
-                    <div class="bar4"></div>
-                    <div class="bar5"></div>
-                </div> 
-                <div class="bar">
-                    <div class="bar6"></div>
-                    <div class="bar7"></div>
-                    <div class="bar8"></div>
-                </div> 
-                <div class="bar">
-                    <div class="bar9"></div>
-                    <div class="bar10"></div>
-                    <div class="bar11"></div>
-                </div> 
-                <div class="bar">
-                    <div class="bar12"></div>
-                    <div class="bar13"></div>
-                    <div class="bar14"></div>
+            <div class="chart">
+                <div class="group item1">
+                <div class="bars">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                <div class="label">Item 1</div>
+                </div>
+                <div class="group item2">
+                <div class="bars">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                <div class="label">Item 2</div>
+                </div>
+                <div class="group item3">
+                <div class="bars">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                <div class="label">Item 3</div>
+                </div>
+                <div class="group item4">
+                <div class="bars">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                <div class="label">Item 4</div>
+                </div>
+                <div class="group item5">
+                <div class="bars">
+                    <div class="bar bar1"></div>
+                    <div class="bar bar2"></div>
+                    <div class="bar bar3"></div>
+                </div>
+                <div class="label">Item 5</div>
                 </div>
             </div>
-
-            <div>
-                <h2>THIS MONTH GOAL</h2>
+                <h1>THIS MONTH GOAL</h1>
                 <div class="goal">
-                    
+                    <div class="goalBar"></div>
                 </div>
-            </div>
         </div> 
-
 
         <div class="right">
             <div class="top">
@@ -162,14 +174,14 @@
 <!-- STYLE CSS -->
 <style>
 
-     header{
+    header{
         height: 10%;
         background-color: #FFF176;
         display: flex;
         justify-content: space-between;
     }
 
-     header h1{
+    header h1{
         font-size: 4rem;
         font-style: italic;
     }
@@ -223,116 +235,116 @@
 
     .container .left h1{
         font-style: italic;
-        font-size: 3rem;
+        font-size: 1.8rem;
     }
 
-    .barChart{
-        display: flex;
-        width: 100%;
-        height: 60%;
+    .goal{
+        width: 80%;
+        height: 90%;
+        background: #1565C0;
     }
 
-    .bar{
-        display: flex;
-        width: 8%;
-        height: 150%;
-        margin: 8px;
-       
+    .chart {
+      display: flex;
+      align-items: flex-end;
+      height: 250px;
+      gap: 20px;
+      margin-top: 9rem;
     }
 
-    .bar1{
-        height: 40px;
-        width: 20px;
-        background-color: #F48FB1;
-        margin: 1px;
+    .group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
     }
-    .bar2{
-        height: 40px;
-        width: 20px;
-        background-color: #FFB74D;
-        margin: 1px;
+
+    .bars {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
     }
-    .bar3{
-        height: 20%;
-        width: 20px;
-        background-color: #FFEE58;
-        margin: 1px;
+
+    .bar {
+      width: 20px;
+      border-radius: 3px;
     }
-    .bar4{
-        height: 20%;
-        width: 20px;
-        background-color: #F48FB1;
-        margin: 1px;
+
+    .bar1 { 
+        background: #ffdd55; 
     }
-    .bar5{
-        height: 20%;
-        width: 20px;
-        background-color:#FFB74D;
-        margin: 1px;
+    .bar2 { 
+        background: #f3b8e4; 
     }
-    .bar6{
-        height: 20%;
-        width: 20px;
-        background-color: #FFEE58;
-        margin: 1px;
+    .bar3 { 
+        background: #ffaa00; 
     }
-    .bar7{
-        height: 20%;
-        width: 20px;
-        background-color: #F48FB1;
-        margin: 1px;
+
+    .label {
+      margin-top: 5px;
+      font-size: 14px;
     }
-    .bar8{
-        height: 20%;
-        width: 20px;
-        background-color:#FFB74D;
-        margin: 1px;
+
+    .item1 .bar2 { 
+        height: 5em; 
     }
-    .bar9{
-        height: 20%;
-        width: 20px;
-        background-color: #FFEE58;
-        margin: 1px;
+    .item1 .bar3 { 
+        height: 4em; 
     }
-    .bar10{
-        height: 20%;
-        width: 20px;
-        background-color: #F48FB1;
-        margin: 1px;
+
+    .item2 .bar1 { 
+        height: 9em; 
     }
-    .bar11{
-        height: 20%;
-        width: 20px;
-        background-color:#FFB74D;
-        margin: 1px;
+    .item2 .bar2 { 
+        height: 7em; 
     }
-    .bar12{
-        height: 20%;
-        width: 20px;
-        background-color: #FFEE58;
-        margin: 1px;
+    .item2 .bar3 { 
+        height: 5em; 
     }
-    .bar13{
-        height: 20%;
-        width: 20px;
-        background-color: #F48FB1;
-        margin: 1px;
+
+    .item3 .bar1 { 
+        height: 13em; 
     }
-    .bar14{
-        height: 20%;
-        width: 20px;
-        background-color:#FFB74D;
-        margin: 1px;
+    .item3 .bar2 { 
+        height: 10em;
+    }
+    .item3 .bar3 {
+        height: 6em;
+    }
+
+    .item4 .bar1 {
+        height: 19em;
+    }
+    .item4 .bar2 { 
+        height: 15em;
+    }
+    .item4 .bar3 {
+        height: 9em;
+    }
+
+    .item5 .bar1 {
+        height: 22em;
+    }
+    .item5 .bar2 {
+        height: 20em;
+    }
+    .item5 .bar3 { 
+        height: 10em;
     }
 
     .goal{
         width: 50%;
-        height: 10%;
-        background-color: gray;
-        color: #1565C0;
+        height: 8%;
+        background: #444547;
+        border-radius: 2rem;
+        margin-left: 2rem;
     }
-
-
+    .goalBar{
+        width: 70%;
+        height: 100%;
+        background: #f4e91e;
+        border-radius: 2rem;
+    }
 
     .container .right{
         width: 70%;
@@ -348,7 +360,7 @@
     .container .right .top h1{
         font-style: italic;
         margin-right: 30rem;
-        font-size: 3rem;
+        font-size: 1.8rem;
     }
 
     .addNewProduct{
@@ -357,7 +369,7 @@
         background-color: #1565C0;
         color: white;
         border-radius: 1.2rem;
-        font-size: 20px;
+        font-size: 18px;
         cursor: pointer;
     }
 
@@ -370,17 +382,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 2rem;
+        margin: 1rem;
     }
 
     .product h2{
         margin: 0;
+        font-size: 20px;
     }
 
     .product p{
         color: #1565C0;
         font-weight: bold;
-        font-size: 22px;
+        font-size: 14px;
         margin: 8px;
     }
 
@@ -389,30 +402,30 @@
     }
 
     .editBtn{
-        padding: 14px;
+        padding: 10px;
         border: none;
         background-color: #1565C0;
         color: white;
         border-radius: 1.2rem;
-        font-size: 20px;
+        font-size: 15px;
         cursor: pointer;
         margin: 3px;
     }
 
     .deleteBtn{
-        padding: 14px;
+        padding: 10px;
         border: none;
         background-color: #FF7043;
         color: white;
         border-radius: 1.2rem;
-        font-size: 20px;
+        font-size: 15px;
         cursor: pointer;
         margin: 3px;
     }
 
     img{
-        height: 180px;
-        width: 180px;
+        height: 130px;
+        width: 130px;
     }
 
  </style>
